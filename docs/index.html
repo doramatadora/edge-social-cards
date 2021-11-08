@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      property="og:image"
+      content="https://thankfully-certain-mallard.edgecompute.app/?title=Edit the post title...&huerot=0"
+    />
+    <title>Social sharing cards generated on Fastly's Compute@Edge</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <form id="details">
+      <div>
+        1.
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Edit the social card title"
+        />
+      </div>
+      <div>
+        2. <label for="huerot">Adjust color</label>
+        <input
+          type="range"
+          name="huerot"
+          id="huerot"
+          min="0"
+          max="360"
+          value="0"
+        />
+      </div>
+      <div>
+        3.
+        <a
+          class="twitter-share-button"
+          id="tweet"
+          target="_blank"
+          href="https://twitter.com/intent/tweet?text=Social%20sharing%20cards%20generated%20on%20Fastly%27s%20Compute%40Edge%2C%20how%20neat!&url=https%3A%2F%2Fdoramatadora.github.io%2Fedge-social-cards%2F%3Ftitle%3DEdit%2Bthe%2Bsocial%2Bcard%2Btitle%26huerot%3D0"
+        >
+          Tweet!</a
+        >
+      </div>
+    </form>
+    <main>
+      <img
+        src="https://thankfully-certain-mallard.edgecompute.app/?title=Edit the social card title&huerot=0"
+        alt="Social card preview"
+        class="fullwidth"
+        id="preview"
+      />
+      <p>Social sharing cards generated on Fastly's Compute@Edge, how neat! Check out other demos at <a href="https://developer.fastly.com/solutions/demos">developers.fastly.com</a>.</p>
+    </main>
+  </body>
+  <script src="./script.js" charset="UTF-8"></script>
+</html>

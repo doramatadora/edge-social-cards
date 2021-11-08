@@ -1,0 +1,9 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["dmilitaru@fastly.com"]
+description = "Social sharing cards generated on Fastly's Compute@Edge"
+language = "rust"
+manifest_version = 2
+name = "edge-social-cards"
+service_id = "6T44VvS3qhjY69uBKemFGj"

@@ -1,2 +1,1 @@
-# edge-social-cards
-Social sharing cards generated on Fastly's Compute@Edge
+# Social sharing card generator on Fastly's Compute@Edge
