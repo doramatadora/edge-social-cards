@@ -1,5 +1,4 @@
-const PREVIEW_URL = "https://thankfully-certain-mallard.edgecompute.app";
-const DEMO_URL="https://doramatadora.github.io/edge-social-cards";
+const DEMO_URL="https://endlessly-enjoyed-martin.edgecompute.app";
 const TWEET_URL =
   "https://twitter.com/intent/tweet?text="+encodeURIComponent("Social sharing cards generated on Fastly's Compute@Edge, how neat!") + "&url=";
 const preview = document.getElementById("preview");
@@ -24,7 +23,7 @@ const debounce = (func, wait) => {
 
 const updateSocialCard = debounce(function () {
   const qs = new URLSearchParams(new FormData(formEl)).toString();
-  const url = PREVIEW_URL + "/?" + qs;
+  const url = DEMO_URL + "/card/?" + qs;
   preview.src = url;
   meta.setAttribute("content", url);
   tweet.setAttribute("href", TWEET_URL + encodeURIComponent(DEMO_URL + "/?" + qs));
