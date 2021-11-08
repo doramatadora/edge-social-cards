@@ -17,7 +17,7 @@ fn main(req: Request) -> Result<Response, Error> {
     match req.get_method() {
         // Allow GET and HEAD requests.
         &Method::GET | &Method::HEAD => match req.get_path() {
-            "/" => {
+            "/card/" => {
                 // Deserialize the query string parameters.
                 let qs: CardDetails = req.get_query().unwrap();
                 // Load and hue-rotate the card background.
