@@ -28,7 +28,7 @@ const updateSocialCard = debounce(function () {
   preview.src = url;
   meta.setAttribute("content", url);
   twimg.setAttribute("content", url);
-  tweet.setAttribute("href", TWEET_URL + DEMO_URL + "/?" + qs);
+  tweet.setAttribute("href", TWEET_URL + encodeURIComponent(DEMO_URL + "/?" + qs));
 }, 250);
 
 title.addEventListener("keyup", updateSocialCard);

@@ -93,6 +93,7 @@ dependencies = [
  "fastly",
  "image",
  "imageproc",
+ "percent-encoding",
  "rusttype",
  "serde",
  "textwrap",

@@ -2,13 +2,18 @@ use fastly::http::{header, Method, StatusCode};
 use fastly::{mime, Error, Request, Response};
 use rusttype::{Font, Scale};
 use serde::Deserialize;
+use percent_encoding::{percent_decode};
 
 #[derive(Deserialize, Default)]
 pub struct CardDetails {
-    #[serde(default)]
+    #[serde(default = "default_title")]
     pub title: String,
     #[serde(default)]
     pub huerot: i32,
+}
+
+fn default_title() -> String {
+    "Edit the social card title".to_string()
 }
 
 #[fastly::main]
@@ -20,6 +25,7 @@ fn main(req: Request) -> Result<Response, Error> {
             "/card/" => {
                 // Deserialize the query string parameters.
                 let qs: CardDetails = req.get_query().unwrap();
+                let title = percent_decode(&qs.title.as_bytes()).decode_utf8().unwrap();
                 // Load and hue-rotate the card background.
                 // Tip: Skipping hue rotation significantly reduces memory heap.
                 let mut img = image::load_from_memory(include_bytes!("card-background.png"))?
@@ -34,9 +40,8 @@ fn main(req: Request) -> Result<Response, Error> {
                 let mut scale_factor = 1.0;
                 let max_word_length = (1200.0 / height * 1.5) as usize;
                 // Set title if specified.
-                if qs.title.len() > 0 {
-                    let longest_word_length = qs
-                        .title
+                if title.len() > 0 {
+                    let longest_word_length = title
                         .split(" ")
                         .max_by_key(|word| word.len())
                         .unwrap()
@@ -48,7 +53,7 @@ fn main(req: Request) -> Result<Response, Error> {
                     // Wrapping.
                     let mut i = 0;
                     textwrap::fill(
-                        &qs.title,
+                        &title,
                         std::cmp::max(max_word_length, longest_word_length),
                     )
                     .split("\n")
