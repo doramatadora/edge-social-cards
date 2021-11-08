@@ -12,8 +12,14 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Social sharing cards generated on Fastly's Compute@Edge" />
-    <meta property="twitter:title" content="Social sharing cards generated on Fastly's Compute@Edge" />
+    <meta
+      property="og:title"
+      content="Social sharing cards generated on Fastly's Compute@Edge"
+    />
+    <meta
+      property="twitter:title"
+      content="Social sharing cards generated on Fastly's Compute@Edge"
+    />
     <title>Social sharing cards generated on Fastly's Compute@Edge</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link
@@ -23,46 +29,49 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <form id="details">
-      <div>
-        1.
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Hello from the Edge"
-        />
-      </div>
-      <div>
-        2. <label for="huerot">Adjust color</label>
-        <input
-          type="range"
-          name="huerot"
-          id="huerot"
-          min="0"
-          max="360"
-          value="0"
-        />
-      </div>
-      <div>
-        3.
-        <a
-          class="twitter-share-button"
-          id="tweet"
-          target="_blank"
-          href="https://twitter.com/intent/tweet?text=Social%20sharing%20cards%20generated%20on%20Fastly%27s%20Compute%40Edge%2C%20how%20neat!&url=https%3A%2F%2Fsocial-cards-demo.edgecompute.app%2Fcard%2F%3Ftitle%3DHello%2520from%2520the%2520Edge%26huerot%3D0"
-        >
-          Tweet!</a
-        >
-      </div>
-    </form>
     <main>
-      <img
-        src="https://social-cards-demo.edgecompute.app/card/?title=...&huerot=0"
-        alt="Social card preview"
-        class="fullwidth"
-        id="preview"
-      />
+      <form id="details">
+        <div>
+          1.
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Hello from the Edge"
+          />
+        </div>
+        <div>
+          2. <label for="huerot">Adjust color</label>
+          <input
+            type="range"
+            name="huerot"
+            id="huerot"
+            min="0"
+            max="360"
+            value="0"
+          />
+        </div>
+        <div>
+          3.
+          <a
+            class="twitter-share-button"
+            id="tweet"
+            target="_blank"
+            href="https://twitter.com/intent/tweet?text=Social%20sharing%20cards%20generated%20on%20Fastly%27s%20Compute%40Edge%2C%20how%20neat!&url=https%3A%2F%2Fsocial-cards-demo.edgecompute.app%2Fcard%2F%3Ftitle%3DHello%2520from%2520the%2520Edge%26huerot%3D0"
+          >
+            Tweet!</a
+          >
+        </div>
+      </form>
+      <div class="preview">
+        <img
+          src="https://social-cards-demo.edgecompute.app/card/?title=...&huerot=0"
+          alt="Social card preview"
+          id="preview"
+        />
+      </div>
+    </main>
+    <aside>
       <p>
         Social sharing cards generated on Fastly's Compute@Edge, how neat! Check
         out other demos at
@@ -70,7 +79,7 @@
           >developers.fastly.com</a
         >.
       </p>
-    </main>
+    </aside>
   </body>
   <script src="./script.js" charset="UTF-8"></script>
 </html>
