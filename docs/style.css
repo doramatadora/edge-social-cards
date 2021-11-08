@@ -24,11 +24,6 @@ form {
 form div {
   padding: 0.5em;
 }
-@media (max-width: 688px) {
-  form {
-    flex-direction: column;
-  }
-}
 input[type="text"] {
   font-size: 1.2em;
   background-color: #f2f5f7;
@@ -36,6 +31,20 @@ input[type="text"] {
   min-width: 300px;
   border-bottom: 1px dashed #464646;
 }
+@media (max-width: 688px) {
+  form {
+    flex-direction: column;
+    align-items: start;
+    font-size: 1em;
+  }
+  input[type="text"] {
+    font-size:1em;
+  }
+  form div {
+    padding: 0.2em;
+  }
+}
+
 .fullwidth {
   width: 100%;
 }
