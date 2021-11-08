@@ -47,7 +47,6 @@ input[type="text"] {
 }
 a,
 a:visited {
-  padding: 2px 5px;
   cursor: pointer;
   text-decoration: underline;
   text-decoration-style: wavy;
@@ -55,8 +54,7 @@ a:visited {
   color: #e73c7e;
 }
 a:hover {
-  background-color: #e73c7e;
-  color: #ffffff;
+  color: #e73c7e;
   text-decoration: none;
 }
 aside {
