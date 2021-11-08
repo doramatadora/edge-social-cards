@@ -13,7 +13,7 @@ pub struct CardDetails {
 }
 
 fn default_title() -> String {
-    "Edit the social card title".to_string()
+    "Hello from the Edge".to_string()
 }
 
 #[fastly::main]

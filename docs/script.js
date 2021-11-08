@@ -36,7 +36,7 @@ huerot.addEventListener("change", updateSocialCard);
 
 const urlParams = new URLSearchParams(window.location.search);
 
-title.value = decodeURIComponent(urlParams.get("title") || "Edit the social card title");
+title.value = decodeURIComponent(urlParams.get("title") || "Hello%20from%20the%20Edge");
 huerot.value = urlParams.get("huerot") || 0;
 
 updateSocialCard();
