@@ -23,12 +23,12 @@ const debounce = (func, wait) => {
 };
 
 const updateSocialCard = debounce(function () {
-  const qs = "title=" + title.value + "&huerot=" + huerot.value;
+  const qs = "title=" + encodeURIComponent(title.value) + "&huerot=" + huerot.value;
   const url = DEMO_URL + "/card/?" + qs;
   preview.src = url;
   meta.setAttribute("content", url);
   twimg.setAttribute("content", url);
-  tweet.setAttribute("href", TWEET_URL + encodeURIComponent(DEMO_URL + "/?" + qs));
+  tweet.setAttribute("href", TWEET_URL + DEMO_URL + "/?" + qs);
 }, 250);
 
 title.addEventListener("keyup", updateSocialCard);
@@ -36,7 +36,7 @@ huerot.addEventListener("change", updateSocialCard);
 
 const urlParams = new URLSearchParams(window.location.search);
 
-title.value = decodeURIComponent(urlParams.get("title")) || "Edit the social card title";
+title.value = decodeURIComponent(urlParams.get("title") || "Edit the social card title");
 huerot.value = urlParams.get("huerot") || 0;
 
 updateSocialCard();
